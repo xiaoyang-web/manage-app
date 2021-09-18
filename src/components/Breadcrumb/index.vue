@@ -25,7 +25,6 @@ export default {
         return
       }
       this.getBreadcrumb()
-      console.log(this.levelList)
     }
   },
   created() {

@@ -6,8 +6,11 @@
     <el-form-item label="Email">
       <el-input v-model.trim="user.email" />
     </el-form-item>
+    <el-form-item label="Phone">
+      <el-input v-model.trim="user.phone" />
+    </el-form-item>
     <el-form-item>
-      <el-button type="primary" @click="submit">Update</el-button>
+      <el-button type="primary" @click="submit">更新</el-button>
     </el-form-item>
   </el-form>
 </template>
@@ -20,7 +23,8 @@ export default {
       default: () => {
         return {
           name: '',
-          email: ''
+          email: '',
+          phone: ''
         }
       }
     }

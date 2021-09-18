@@ -59,7 +59,8 @@ export default {
       this.user = {
         name: this.name,
         role: this.roles.join(' | '),
-        email: 'admin@test.com',
+        email: 'a356510493@hotmail.com',
+        phone: '17687902237',
         avatar: this.avatar
       }
     }

@@ -1,51 +1,52 @@
 <template>
   <el-card style="margin-bottom:20px;">
     <div slot="header" class="clearfix">
-      <span>About me</span>
+      <span>关于</span>
     </div>
 
     <div class="user-profile">
       <div class="box-center">
         <pan-thumb :image="user.avatar" :height="'100px'" :width="'100px'" :hoverable="false">
           <div>Hello</div>
-          {{ user.role }}
+          {{ user.name }}
         </pan-thumb>
       </div>
       <div class="box-center">
         <div class="user-name text-center">{{ user.name }}</div>
-        <div class="user-role text-center text-muted">{{ user.role | uppercaseFirst }}</div>
       </div>
     </div>
 
     <div class="user-bio">
-      <div class="user-education user-bio-section">
-        <div class="user-bio-section-header"><svg-icon icon-class="education" /><span>Education</span></div>
+      <div class="user-phone user-bio-section">
+        <div class="user-bio-section-header">
+          <svg-icon icon-class="phone" /><span>电话</span>
+        </div>
         <div class="user-bio-section-body">
-          <div class="text-muted">
-            JS in Computer Science from the University of Technology
-          </div>
+          <p class="text-muted">
+            {{ user.phone }}
+          </p>
         </div>
       </div>
 
-      <div class="user-skills user-bio-section">
-        <div class="user-bio-section-header"><svg-icon icon-class="skill" /><span>Skills</span></div>
+      <div class="user-email user-bio-section">
+        <div class="user-bio-section-header">
+          <svg-icon icon-class="email" /><span>邮箱</span>
+        </div>
         <div class="user-bio-section-body">
-          <div class="progress-item">
-            <span>Vue</span>
-            <el-progress :percentage="70" />
-          </div>
-          <div class="progress-item">
-            <span>JavaScript</span>
-            <el-progress :percentage="18" />
-          </div>
-          <div class="progress-item">
-            <span>Css</span>
-            <el-progress :percentage="12" />
-          </div>
-          <div class="progress-item">
-            <span>ESLint</span>
-            <el-progress :percentage="100" status="success" />
-          </div>
+          <p class="text-muted">
+            {{ user.email }}
+          </p>
+        </div>
+      </div>
+
+      <div class="user-github user-bio-section">
+        <div class="user-bio-section-header">
+          <svg-icon icon-class="github" /><span>github</span>
+        </div>
+        <div class="user-bio-section-body">
+          <p class="text-muted">
+            <a href="https://github.com/xiaoyang-web/manage-app">项目地址</a>
+          </p>
         </div>
       </div>
     </div>
@@ -54,6 +55,7 @@
 
 <script>
 import PanThumb from '@/components/PanThumb'
+// import clipboard from '@/directive/clipboard/index.js'
 
 export default {
   components: { PanThumb },
@@ -63,6 +65,7 @@ export default {
       default: () => {
         return {
           name: '',
+          phone: '',
           email: '',
           avatar: '',
           role: ''
@@ -128,6 +131,7 @@ export default {
       padding-bottom: 10px;
       margin-bottom: 10px;
       font-weight: bold;
+      cursor: pointer;
     }
   }
 }
